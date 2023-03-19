@@ -3,20 +3,21 @@ import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import CityList from './pages/CityList';
 
-import { Button } from 'antd-mobile';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        {/* 项目根组件 <Button>登录</Button> */}
+        {/* Root component <Button>Log in</Button> */}
 
-        {/* 路由链接 */}
-        <Link to="/home">首页</Link>
-        <Link to="/citylist">城市选择</Link>
-        {/* 路由规则 */}
+        {/* Route Linke */}
+        <ul>
+          <li><Link to="/home">首页</Link></li>
+          <li><Link to="/citylist">城市选择</Link></li>
+        </ul>
+        {/* Route rules */}
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/home/*" element={<Home />} />
           <Route path="/citylist" element={<CityList />} />
         </Routes>
       </div>
